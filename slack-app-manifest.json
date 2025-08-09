@@ -1,0 +1,52 @@
+{
+    "display_information": {
+        "name": "Claude Code Bot",
+        "description": "A Slack bot that answers questions about your GitHub repository using Claude Code CLI",
+        "background_color": "#2c3e50"
+    },
+    "features": {
+        "bot_user": {
+            "display_name": "Claude Code Bot",
+            "always_online": false
+        }
+    },
+    "oauth_config": {
+        "redirect_urls": [
+            "https://your-ngrok-url.ngrok.io/slack/callback"
+        ],
+        "scopes": {
+            "bot": [
+                "chat:write",
+                "chat:write.public",
+                "files:read",
+                "channels:read",
+                "channels:history",
+                "groups:read",
+                "groups:history",
+                "im:read",
+                "im:write",
+                "im:history",
+                "mpim:read",
+                "mpim:write",
+                "mpim:history",
+                "app_mentions:read",
+                "reactions:write"
+            ]
+        }
+    },
+    "settings": {
+        "event_subscriptions": {
+            "request_url": "https://your-ngrok-url.ngrok.io/slack/webhook",
+            "bot_events": [
+                "app_mention",
+                "message.im",
+                "message.groups",
+                "message.mpim"
+            ]
+        },
+        "org_deploy_enabled": false,
+        "socket_mode_enabled": false,
+        "is_hosted": false,
+        "token_rotation_enabled": false
+    }
+}
